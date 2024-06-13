@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="MakeMeUpzz.View.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MakeMeUpzz</title>
+    <style>
+        /* Reset CSS */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navBar {
+            display: flex;
+            background-color: gray;
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="master_navBar" class="navBar">
+            
+            <asp:Button ID="homeMaster" runat="server" Text="Home" OnClick="homeMaster_Click"/>
+
+            <asp:Button ID="orderMakeupMaster" runat="server" Text="Order Makeup" />
+
+            <asp:Button ID="orderQueueMaster" runat="server" Text="Order Queue" />
+            
+            <asp:Button ID="manageMakeupMaster" runat="server" Text="Manage Makeup" OnClick="manageMakeupMaster_Click"/>
+
+            <asp:Button ID="transactionReportMaster" runat="server" Text="Transaction Report" />
+            
+            <asp:Button ID="historyMaster" runat="server" Text="History" />
+
+            <asp:Button ID="profileMaster" runat="server" Text="Profile" />
+            <asp:Button ID="logoutMaster" runat="server" Text="Logout" OnClick="logoutMaster_Click"/>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

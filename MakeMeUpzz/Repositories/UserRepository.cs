@@ -10,40 +10,25 @@ namespace MakeMeUpzz.Repository
     {
         private static Database1Entities db = DatabaseSingleton.GetInstance();
 
-        /*---------------------- Start Line Register ---------------------- */
+        /*----------------------   Register   ---------------------- */
+        /*---------------------- Start Line  ---------------------- */
         public int GenerateNewUserId()
         {
             int? lastId = db.Users.Max(x => (int?)x.UserID);
             return (lastId ?? 0) + 1;
         }
 
-        public void AddNewUser(User user)
+        public void AddNewUser(User newUser)
         {
-            db.Users.Add(user);
-            db.SaveChanges();
-        }
-
-        /*---------------------- End Line Register ---------------------- */
-
-
-        public void AddUser(User newUser)
-        {
-            if (newUser == null)
-            {
-                throw new ArgumentNullException(nameof(newUser), "User cannot be null");
-            }
-
             db.Users.Add(newUser);
             db.SaveChanges();
         }
+        /*---------------------- End Line  ---------------------- */
+      /*----------------------   Register   ---------------------- */
 
-        /*---------------------- Start Line Login ---------------------- */
-        public bool Authentication(string username, string password)
-        {
-            var users = db.Users.Any(u => u.Username == username && u.UserPassword == password);
-            return users;
-        }
 
+        /*----------------------   Login   ---------------------- */
+        /*---------------------- Start Line  ---------------------- */
         public User GetUserByUsername(string username)
         {
             return (from u
@@ -52,12 +37,16 @@ namespace MakeMeUpzz.Repository
                     select u).FirstOrDefault();
         }
 
-
-        /*public bool Verification(string username, string password)
+        public bool Verification(string username, string password)
         {
             return db.Users.Any(u => u.Username == username && u.UserPassword == password);
-        }*/
+        }
+        /*---------------------- End Line  ---------------------- */
+        /*----------------------   Login   ---------------------- */
 
+
+        /*----------------------   HomePage   ---------------------- */
+        /*---------------------- Start Line  ---------------------- */
 
         public User GetUserByID(int id)
         {
@@ -68,5 +57,8 @@ namespace MakeMeUpzz.Repository
         {
             return (from u in db.Users select u).ToList();
         }
+
+        /*----------------------   HomePage   ---------------------- */
+        /*---------------------- End Line  ---------------------- */
     }
 }

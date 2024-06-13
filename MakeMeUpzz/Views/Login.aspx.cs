@@ -23,7 +23,7 @@ namespace MakeMeUpzz.Views
             string password = login_password.Text;
             bool isRemember = checkRememberMe.Checked;
 
-            bool isAuthenticated = userRepo.Authentication(username, password);
+            bool isAuthenticated = userRepo.Verification(username, password);
 
             if (string.IsNullOrEmpty(username))
             {

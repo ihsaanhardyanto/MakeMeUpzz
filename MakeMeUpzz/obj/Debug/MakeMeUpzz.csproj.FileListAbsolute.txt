@@ -43,3 +43,16 @@ C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\Microsoft.CodeDom.Providers
 C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\obj\Debug\MakeMeUpzz.csproj.Up2Date
 C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\obj\Debug\MakeMeUpzz.dll
 C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\obj\Debug\MakeMeUpzz.pdb
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Helpers.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Mvc.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Razor.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.Razor.dll
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Helpers.xml
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Mvc.xml
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.Razor.xml
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.xml
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ACER\source\repos\MakeMeUpzz\MakeMeUpzz\bin\System.Web.WebPages.Razor.xml

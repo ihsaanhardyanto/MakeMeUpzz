@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeMeUpzz.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -74,6 +75,15 @@ namespace MakeMeUpzz.Controllers
             }
 
             return response;
+        }
+        public static User GetUserByID(int id)
+        {
+            // Logika untuk mendapatkan pengguna dari database berdasarkan ID
+            // Misalnya:
+            using (var context = new Database1Entities())
+            {
+                return context.Users.FirstOrDefault(user => user.UserID == id);
+            }
         }
     }
 }
