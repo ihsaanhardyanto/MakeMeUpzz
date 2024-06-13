@@ -1,4 +1,8 @@
-﻿using System;
+﻿using MakeMeUpzz.Controllers;
+using MakeMeUpzz.Factory;
+using MakeMeUpzz.Models;
+using MakeMeUpzz.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,90 +13,78 @@ namespace MakeMeUpzz.Views
 {
     public partial class Register : Page
     {
+        UserRepository userRepo = new UserRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            LblMessage.Visible = false;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string gender = ddlGender.SelectedValue;
-            string password = txtPassword.Text.Trim();
-            string confirmPassword = txtConfirmPassword.Text.Trim();
-            DateTime dateOfBirth;
-
-            if (calDOB.SelectedDate == DateTime.MinValue)
+            string response = UserController.CheckUsername(txtUsername.Text);
+            if (!string.IsNullOrEmpty(response))
             {
-                lblMessage.Text = "Please select a valid date of birth.";
+                showMessage(response);
                 return;
             }
 
-            dateOfBirth = calDOB.SelectedDate;
-
-            if (password != confirmPassword)
+            response = UserController.CheckEmail(txtEmail.Text);
+            if (!string.IsNullOrEmpty(response))
             {
-                lblMessage.Text = "Passwords do not match.";
+                showMessage(response);
                 return;
             }
 
-            if (ValidateInputs(username, email, gender, password))
+            response = UserController.CheckDOB(txtDOB.Text);
+            if (!string.IsNullOrEmpty(response))
             {
-                // Save the user to the database
-                if (RegisterUser(username, email, gender, password, dateOfBirth))
-                {
-                    lblMessage.Text = "Registration successful!";
-                    Response.Redirect("~/Views/Login.aspx");
-                }
-                else
-                {
-                    lblMessage.Text = "Registration failed. Please try again.";
-                }
+                showMessage(response);
+                return;
             }
+            if (!DateTime.TryParse(txtDOB.Text, out DateTime newDOB))
+            {
+                showMessage("Invalid date format. Please use yyyy-MM-dd.");
+                return;
+            }
+
+            response = UserController.CheckGender(btnMale.Checked, btnFemale.Checked);
+            if (!string.IsNullOrEmpty(response))
+            {
+                showMessage(response);
+                return;
+            }
+
+            response = UserController.CheckPassword(txtPassword.Text);
+            if (!string.IsNullOrEmpty(response))
+            {
+                showMessage(response);
+                return;
+            }
+
+            response = UserController.CheckConfirmPassword(txtConfirmPassword.Text, txtPassword.Text);
+            if (!string.IsNullOrEmpty(response))
+            {
+                showMessage(response);
+                return;
+            }
+
+
+            int newId = userRepo.GenerateNewUserId();
+            String newUsername = txtUsername.Text;
+            String newEmail = txtEmail.Text;
+            String newGender = btnMale.Checked ? btnMale.Text : btnFemale.Text;
+            String newPassword = txtPassword.Text;
+            String newRole = "Customer";
+
+            User user = UserRegisterFactory.CreateUser(newId, newUsername, newEmail, newDOB, newGender, newRole, newPassword);
+            userRepo.AddNewUser(user);
+            Response.Redirect("Login.aspx");
         }
 
-        private bool ValidateInputs(string username, string email, string gender, string password)
+        private void showMessage(string msg)
         {
-            if (string.IsNullOrEmpty(username) || username.Length < 5 || username.Length > 15)
-            {
-                lblMessage.Text = "Username must be between 5 and 15 characters.";
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(email) || !email.Contains("@"))
-            {
-                lblMessage.Text = "Enter the valid email";
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(gender))
-            {
-                lblMessage.Text = "Gender must be selected.";
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(password) || password.Length < 5)
-            {
-                lblMessage.Text = "Password must be at least 5 characters long.";
-                return false;
-            }   
-
-            return true;
-        }
-
-        private bool RegisterUser(string username, string email, string gender, string password, DateTime dateOfBirth)
-        {
-            try
-            {
-                // Add database registration logic here
-                // This is a placeholder for actual database interaction code
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // Log the exception
-                return false;
-            }
+            LblMessage.Visible = true;
+            LblMessage.Text = msg;
         }
     }
 }

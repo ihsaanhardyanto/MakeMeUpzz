@@ -23,9 +23,9 @@
             <asp:CheckBox ID="checkRememberMe" runat="server" Text="Remember Me" />
          </div>
          
-        <asp:Button ID="login_submit" runat="server" Text="Login" OnClick="login_submit_Click" />
+        <asp:Button ID="login_submit" runat="server" Text="Login" />
     </form>
-
+    
        <p>Don't have an account? <a href="/Register">Register here</a>.</p>
 </body>
 </html>

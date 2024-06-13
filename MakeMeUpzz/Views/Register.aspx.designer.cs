@@ -24,15 +24,6 @@ namespace MakeMeUpzz.Views
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
         /// LblUsername control.
         /// </summary>
         /// <remarks>
@@ -78,13 +69,13 @@ namespace MakeMeUpzz.Views
         protected global::System.Web.UI.WebControls.Label LblDOB;
 
         /// <summary>
-        /// calDOB control.
+        /// txtDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calDOB;
+        protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
         /// LblGender control.
@@ -96,13 +87,22 @@ namespace MakeMeUpzz.Views
         protected global::System.Web.UI.WebControls.Label LblGender;
 
         /// <summary>
-        /// ddlGender control.
+        /// btnMale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+        protected global::System.Web.UI.WebControls.RadioButton btnMale;
+
+        /// <summary>
+        /// btnFemale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton btnFemale;
 
         /// <summary>
         /// LblPassword control.
@@ -139,6 +139,15 @@ namespace MakeMeUpzz.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+
+        /// <summary>
+        /// LblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMessage;
 
         /// <summary>
         /// btnRegister control.

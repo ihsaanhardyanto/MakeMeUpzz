@@ -15,14 +15,6 @@ namespace MakeMeUpzz.Views
 
         }
 
-        protected void login_submit_Click(object sender, EventArgs e)
-        {
-            string username = login_username.Text;
-            string password = login_password.Text;
-            bool rememberMe = checkRememberMe.Checked;
-
-            // Implement login logic here (e.g., check the database)
-            bool loginSuccess = (username == "admin" && password == "password"); // Replace with real login logic
-        }
+        
     }
 }
