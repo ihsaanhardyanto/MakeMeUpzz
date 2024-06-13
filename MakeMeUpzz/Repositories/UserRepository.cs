@@ -36,9 +36,12 @@ namespace MakeMeUpzz.Repository
             db.Users.Add(newUser);
             db.SaveChanges();
         }
-        public bool Verification(string username, string password)
+
+        /*---------------------- Start Line Login ---------------------- */
+        public bool Authentication(string username, string password)
         {
-            return db.Users.Any(u => u.Username == username && u.UserPassword == password);
+            var users = db.Users.Any(u => u.Username == username && u.UserPassword == password);
+            return users;
         }
 
         public User GetUserByUsername(string username)
@@ -48,6 +51,13 @@ namespace MakeMeUpzz.Repository
                     where u.Username.Equals(username)
                     select u).FirstOrDefault();
         }
+
+
+        /*public bool Verification(string username, string password)
+        {
+            return db.Users.Any(u => u.Username == username && u.UserPassword == password);
+        }*/
+
 
         public User GetUserByID(int id)
         {

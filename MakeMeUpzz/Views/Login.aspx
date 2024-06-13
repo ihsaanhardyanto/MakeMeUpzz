@@ -21,11 +21,20 @@
 
         <div>
             <asp:CheckBox ID="checkRememberMe" runat="server" Text="Remember Me" />
+        </div>
+
+        <div>
+            <asp:Label ID="label_message" runat="server" Text="" ForeColor="Red"></asp:Label>
+        </div>
+
+         <div>
+            <asp:Button ID="login_submit" runat="server" Text="Login" OnClick="login_submit_Click" />
          </div>
-         
-        <asp:Button ID="login_submit" runat="server" Text="Login" />
     </form>
-    
-       <p>Don't have an account? <a href="/Register">Register here</a>.</p>
+
+    <div>
+        <asp:Label ID="Label1" runat="server" Text="Don't have an account? "></asp:Label>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/View/Register.aspx">Register here </asp:HyperLink>
+    </div>
 </body>
 </html>

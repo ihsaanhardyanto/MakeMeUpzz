@@ -69,6 +69,15 @@ namespace MakeMeUpzz.Views
         protected global::System.Web.UI.WebControls.CheckBox checkRememberMe;
 
         /// <summary>
+        /// label_message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_message;
+
+        /// <summary>
         /// login_submit control.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,23 @@ namespace MakeMeUpzz.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button login_submit;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// HyperLink1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }
