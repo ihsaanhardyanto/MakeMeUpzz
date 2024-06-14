@@ -24,7 +24,7 @@ namespace MakeMeUpzz.Repository
             db.SaveChanges();
         }
         /*---------------------- End Line  ---------------------- */
-      /*----------------------   Register   ---------------------- */
+        /*----------------------   Register   ---------------------- */
 
 
         /*----------------------   Login   ---------------------- */
@@ -39,7 +39,8 @@ namespace MakeMeUpzz.Repository
 
         public bool Verification(string username, string password)
         {
-            return db.Users.Any(u => u.Username == username && u.UserPassword == password);
+            var users = db.Users.Any(u => u.Username == username && u.UserPassword == password);
+            return users;
         }
         /*---------------------- End Line  ---------------------- */
         /*----------------------   Login   ---------------------- */
@@ -59,6 +60,35 @@ namespace MakeMeUpzz.Repository
         }
 
         /*----------------------   HomePage   ---------------------- */
+        /*---------------------- End Line  ---------------------- */
+
+        /*-------------------   Profile Page   ---------------------- */
+        /*---------------------- Start Line  ---------------------- */
+        public void ModifyUserData(int id, string name, string email, DateTime DOB, string gender, string role, string password)
+        {
+            User user = db.Users.Find(id);
+            user.UserID = id;
+            user.Username = name;
+            user.UserEmail = email;
+            user.UserDOB = DOB;
+            user.UserGender = gender;
+            user.UserRole = role;
+            user.UserPassword = password;
+
+            db.SaveChanges();
+        }
+
+        public void ModifyUserPass(int id, string new_password)
+        {
+            User user = db.Users.Find(id);
+            if (user != null)
+            {
+                user.UserPassword = new_password;
+                db.SaveChanges();
+            }
+        }
+
+        /*-------------------   Profile Page  ---------------------- */
         /*---------------------- End Line  ---------------------- */
     }
 }

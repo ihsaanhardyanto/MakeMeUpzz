@@ -64,5 +64,10 @@ namespace MakeMeUpzz.View
         {
             Response.Redirect("HomePage.aspx");
         }
+
+        protected void profileMaster_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProfilePage.aspx");
+        }
     }
 }

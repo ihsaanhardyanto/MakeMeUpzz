@@ -35,7 +35,8 @@
             
             <asp:Button ID="historyMaster" runat="server" Text="History" />
 
-            <asp:Button ID="profileMaster" runat="server" Text="Profile" />
+            <asp:Button ID="profileMaster" runat="server" Text="Profile" OnClick="profileMaster_Click" />
+
             <asp:Button ID="logoutMaster" runat="server" Text="Logout" OnClick="logoutMaster_Click"/>
         </div>
 

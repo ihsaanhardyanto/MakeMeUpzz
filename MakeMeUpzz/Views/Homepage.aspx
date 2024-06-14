@@ -4,7 +4,7 @@
     
     <div>
         <asp:Label ID="lblRole" runat="server" Text="Role"></asp:Label>
-        <asp:Label ID="lblName " runat="server" Text="Name"></asp:Label>
+        <asp:Label ID="lblName" runat="server" Text="Name"></asp:Label>
     </div>
 
     <div>
